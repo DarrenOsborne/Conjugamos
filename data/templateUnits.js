@@ -15,8 +15,8 @@ export const templateUnits = [
       "Reflexive verbs use me/te/se/nos/os/se before the conjugated verb. Keep pronoun-person agreement: yo me levanto, tú te pones, nosotros nos acostamos.",
     lessonObjectives: [
       "Match each reflexive pronoun with the correct subject.",
-      "Conjugate daily-routine reflexive verbs in the present tense.",
-      "Describe a morning and evening routine with reflexive actions."
+      "Conjugate reflexive verbs with reflexive pronouns in every drill.",
+      "Describe a morning and evening routine using only reflexive actions."
     ],
     verbs: ["levantarse", "ponerse", "acostarse", "ducharse", "lavarse", "vestirse", "sentarse", "despertarse", "afeitarse", "maquillarse"],
     recognition: [
@@ -31,7 +31,10 @@ export const templateUnits = [
       { prompt: "tú / ponerse", answer: "te pones" },
       { prompt: "ella / vestirse", answer: "se viste" },
       { prompt: "nosotros / acostarse", answer: "nos acostamos" },
-      { prompt: "ellos / despertarse", answer: "se despiertan" }
+      { prompt: "ellos / despertarse", answer: "se despiertan" },
+      { prompt: "yo / ducharse", answer: "me ducho" },
+      { prompt: "tú / lavarse", answer: "te lavas" },
+      { prompt: "nosotros / sentarse", answer: "nos sentamos" }
     ],
     sentenceBuilding: [
       { prompt: "I get up at six", answer: "Me levanto a las seis" },
@@ -48,8 +51,8 @@ export const templateUnits = [
       "Use estar + gerund (-ando / -iendo) for actions happening right now: estoy hablando, estás haciendo, estamos escribiendo.",
     lessonObjectives: [
       "Form gerunds correctly from -ar, -er, and -ir verbs.",
-      "Conjugate estar and combine it with a gerund.",
-      "Describe in-progress actions in class and at home."
+      "Conjugate estar and combine it with a gerund in every conjugation drill.",
+      "Describe in-progress actions in class and at home using estar + gerund."
     ],
     verbs: ["hablar", "hacer", "estudiar", "comer", "escribir", "leer", "vivir", "abrir", "caminar", "preparar"],
     recognition: [
@@ -60,11 +63,14 @@ export const templateUnits = [
       { form: "están escribiendo", meaning: "they are writing" }
     ],
     conjugation: [
-      { prompt: "yo / hablar", answer: "estoy hablando" },
-      { prompt: "tú / hacer", answer: "estás haciendo" },
-      { prompt: "él / leer", answer: "está leyendo" },
-      { prompt: "nosotros / vivir", answer: "estamos viviendo" },
-      { prompt: "ellos / abrir", answer: "están abriendo" }
+      { prompt: "yo / hablar (estar + gerundio)", answer: "estoy hablando" },
+      { prompt: "tú / hacer (estar + gerundio)", answer: "estás haciendo" },
+      { prompt: "él / leer (estar + gerundio)", answer: "está leyendo" },
+      { prompt: "nosotros / vivir (estar + gerundio)", answer: "estamos viviendo" },
+      { prompt: "ellos / abrir (estar + gerundio)", answer: "están abriendo" },
+      { prompt: "yo / estudiar (estar + gerundio)", answer: "estoy estudiando" },
+      { prompt: "tú / comer (estar + gerundio)", answer: "estás comiendo" },
+      { prompt: "ellos / escribir (estar + gerundio)", answer: "están escribiendo" }
     ],
     sentenceBuilding: [
       { prompt: "I am speaking with my teacher", answer: "Estoy hablando con mi profesor" },
