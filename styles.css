@@ -63,6 +63,18 @@ body {
   border-radius: 8px;
   padding: 0.55rem;
   cursor: pointer;
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.unit-pill {
+  background: #dce4ff;
+  color: #223b91;
+  border-radius: 999px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 .unit-btn.active {
@@ -79,6 +91,30 @@ body {
 
 .card h3 {
   margin-top: 0;
+}
+
+.focus-list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.focus-list li {
+  margin-bottom: 0.35rem;
+}
+
+.checklist {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.check-item {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.check-item input {
+  transform: scale(1.1);
 }
 
 .chips {
@@ -150,9 +186,18 @@ select {
   font-weight: 600;
 }
 
-.unit-phase {
+.unit-phase,
+.unit-meta {
   color: var(--muted);
+}
+
+.unit-phase {
   margin-top: -0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.unit-meta {
+  margin-top: 0;
 }
 
 @media (max-width: 900px) {
