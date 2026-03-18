@@ -1,14 +1,16 @@
 :root {
   color-scheme: light;
-  --bg: #f6f7fb;
+  --bg: #eef2ff;
   --panel: #ffffff;
-  --border: #dde1f0;
-  --text: #1f2940;
+  --border: #d8e0ff;
+  --text: #1b2340;
   --muted: #5f6c8b;
-  --primary: #4361ee;
-  --primary-2: #3147bd;
+  --primary: #3f5ae0;
+  --primary-2: #2e44b4;
+  --surface: #f7f9ff;
   --ok: #14866d;
   --bad: #b4233d;
+  --shadow: 0 10px 30px rgba(34, 60, 160, 0.08);
 }
 
 * {
@@ -18,7 +20,7 @@
 body {
   margin: 0;
   font-family: Inter, Segoe UI, Arial, sans-serif;
-  background: var(--bg);
+  background: linear-gradient(180deg, #f7f9ff 0%, #eef2ff 60%, #e9eeff 100%);
   color: var(--text);
 }
 
@@ -32,36 +34,86 @@ body {
   margin: 0;
 }
 
+.app-header p,
+.app-footer p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
 .layout {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 320px minmax(0, 1fr);
   gap: 1rem;
   padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .panel {
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.units-panel {
+  position: sticky;
+  top: 0.75rem;
+  align-self: start;
+}
+
+.lesson-path {
+  display: inline-block;
+  background: #eef1ff;
+  color: #294098;
+  border: 1px solid #d4ddff;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.module-nav {
+  margin: 1rem 0 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.module-btn {
+  border: 1px solid #ccd6ff;
+  background: var(--surface);
+  color: #324480;
+  border-radius: 999px;
+  padding: 0.45rem 0.7rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.module-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
 }
 
 .unit-list {
   margin-top: 0.75rem;
   display: grid;
-  gap: 0.35rem;
-  max-height: 65vh;
+  gap: 0.4rem;
+  max-height: 72vh;
   overflow: auto;
+  padding-right: 0.25rem;
 }
 
 .unit-btn {
   width: 100%;
   text-align: left;
-  background: #f2f4ff;
+  background: var(--surface);
   border: 1px solid #d8defa;
   color: var(--text);
-  border-radius: 8px;
-  padding: 0.55rem;
+  border-radius: 10px;
+  padding: 0.62rem;
   cursor: pointer;
   display: flex;
   gap: 0.55rem;
@@ -84,9 +136,10 @@ body {
 
 .card {
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 0.85rem;
-  margin-bottom: 0.9rem;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: 0.8rem;
+  background: #fff;
 }
 
 .card h3 {
@@ -147,16 +200,18 @@ button {
 input,
 select {
   border: 1px solid #c9d0ea;
-  border-radius: 8px;
-  padding: 0.5rem 0.6rem;
+  border-radius: 10px;
+  padding: 0.55rem 0.65rem;
+  min-width: 220px;
+  background: #fff;
 }
 
 .btn {
   border: 1px solid #c7d0f6;
   background: #f4f6ff;
   color: var(--text);
-  border-radius: 8px;
-  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  padding: 0.5rem 0.8rem;
   cursor: pointer;
 }
 
@@ -184,6 +239,7 @@ select {
 
 .prompt {
   font-weight: 600;
+  font-size: 1.05rem;
 }
 
 .unit-phase,
@@ -192,7 +248,7 @@ select {
 }
 
 .unit-phase {
-  margin-top: -0.5rem;
+  margin-top: -0.35rem;
   margin-bottom: 0.35rem;
 }
 
@@ -200,9 +256,13 @@ select {
   margin-top: 0;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .layout {
     grid-template-columns: 1fr;
+  }
+
+  .units-panel {
+    position: static;
   }
 
   .unit-list {
