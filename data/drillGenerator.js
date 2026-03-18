@@ -72,6 +72,15 @@ function conjugatePresent(verb) {
 
 export function expandUnitDrills(unit) {
   const verbs = unit.verbs.slice(0, 10);
+
+  const hasCustomDrills = unit.recognition?.length && unit.conjugation?.length && unit.sentenceBuilding?.length;
+  if (hasCustomDrills) {
+    return {
+      ...unit,
+      verbs
+    };
+  }
+
   const conjugation = [];
   const recognition = [];
   const sentenceBuilding = [];
