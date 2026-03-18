@@ -1,4 +1,5 @@
 const PRONOUNS = ["yo", "tú", "él/ella", "nosotros", "vosotros", "ellos/ellas"];
+const REFLEXIVE_PRONOUNS = ["me", "te", "se", "nos", "os", "se"];
 
 const TARGET_VERBS = 15;
 const TARGET_RECOGNITION = 50;
@@ -51,7 +52,11 @@ const PRESENT_IRREGULARS = {
   servir: ["sirvo", "sirves", "sirve", "servimos", "servís", "sirven"],
   preferir: ["prefiero", "prefieres", "prefiere", "preferimos", "preferís", "prefieren"],
   leer: ["leo", "lees", "lee", "leemos", "leéis", "leen"],
-  abrir: ["abro", "abres", "abre", "abrimos", "abrís", "abren"]
+  abrir: ["abro", "abres", "abre", "abrimos", "abrís", "abren"],
+  acostar: ["acuesto", "acuestas", "acuesta", "acostamos", "acostáis", "acuestan"],
+  despertar: ["despierto", "despiertas", "despierta", "despertamos", "despertáis", "despiertan"],
+  sentar: ["siento", "sientas", "sienta", "sentamos", "sentáis", "sientan"],
+  vestir: ["visto", "vistes", "viste", "vestimos", "vestís", "visten"]
 };
 
 const SENTENCE_SUBJECTS = [
@@ -89,6 +94,12 @@ function regularPresent(verb) {
 }
 
 function conjugatePresent(verb) {
+  if (verb.endsWith("se")) {
+    const baseVerb = verb.slice(0, -2);
+    const baseForms = conjugatePresent(baseVerb);
+    return baseForms.map((form, personIndex) => `${REFLEXIVE_PRONOUNS[personIndex]} ${form}`);
+  }
+
   return PRESENT_IRREGULARS[verb] ?? regularPresent(verb);
 }
 
