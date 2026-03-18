@@ -1,0 +1,166 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f7fb;
+  --panel: #ffffff;
+  --border: #dde1f0;
+  --text: #1f2940;
+  --muted: #5f6c8b;
+  --primary: #4361ee;
+  --primary-2: #3147bd;
+  --ok: #14866d;
+  --bad: #b4233d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-header,
+.app-footer {
+  text-align: center;
+  padding: 1rem;
+}
+
+.app-header h1 {
+  margin: 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.unit-list {
+  margin-top: 0.75rem;
+  display: grid;
+  gap: 0.35rem;
+  max-height: 65vh;
+  overflow: auto;
+}
+
+.unit-btn {
+  width: 100%;
+  text-align: left;
+  background: #f2f4ff;
+  border: 1px solid #d8defa;
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.55rem;
+  cursor: pointer;
+}
+
+.unit-btn.active {
+  border-color: var(--primary);
+  background: #e8edff;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.85rem;
+  margin-bottom: 0.9rem;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.chips {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.chips li {
+  background: #eef1fd;
+  padding: 0.35rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid #d5ddff;
+}
+
+.input-row {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  border: 1px solid #c9d0ea;
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+}
+
+.btn {
+  border: 1px solid #c7d0f6;
+  background: #f4f6ff;
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.btn.primary:hover {
+  background: var(--primary-2);
+}
+
+.feedback.ok {
+  color: var(--ok);
+}
+
+.feedback.bad {
+  color: var(--bad);
+}
+
+.story p {
+  margin: 0.4rem 0;
+}
+
+.prompt {
+  font-weight: 600;
+}
+
+.unit-phase {
+  color: var(--muted);
+  margin-top: -0.5rem;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .unit-list {
+    max-height: 260px;
+  }
+}
