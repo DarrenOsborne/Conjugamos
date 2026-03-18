@@ -41,21 +41,36 @@ const PRESENT_IRREGULARS = {
 };
 
 const SENTENCE_SUBJECTS = [
-  ["yo", "Yo"],
-  ["tú", "Tú"],
-  ["él/ella", "Él"],
-  ["nosotros", "Nosotros"],
-  ["vosotros", "Vosotros"],
-  ["ellos/ellas", "Ellos"]
+  { personIndex: 0, subjectKey: "yo", spanish: "Yo", english: "I", showSubject: false },
+  { personIndex: 0, subjectKey: "yo", spanish: "Yo", english: "I", showSubject: false },
+  { personIndex: 1, subjectKey: "tú", spanish: "Tú", english: "You", showSubject: true },
+  { personIndex: 1, subjectKey: "tú", spanish: "Tú", english: "You", showSubject: true },
+  { personIndex: 2, subjectKey: "él/ella", spanish: "Mi hermano", english: "My brother", showSubject: true },
+  { personIndex: 2, subjectKey: "él/ella", spanish: "La profesora", english: "The teacher", showSubject: true },
+  { personIndex: 3, subjectKey: "nosotros", spanish: "Nosotros", english: "We", showSubject: true },
+  { personIndex: 3, subjectKey: "nosotros", spanish: "Mi familia y yo", english: "My family and I", showSubject: true },
+  { personIndex: 4, subjectKey: "vosotros", spanish: "Vosotros", english: "You all", showSubject: true },
+  { personIndex: 4, subjectKey: "vosotros", spanish: "Tus amigos", english: "Your friends", showSubject: true },
+  { personIndex: 5, subjectKey: "ellos/ellas", spanish: "Ellos", english: "They", showSubject: true },
+  { personIndex: 5, subjectKey: "ellos/ellas", spanish: "Mis amigos", english: "My friends", showSubject: true }
 ];
 
-const SENTENCE_TEMPLATES = [
-  "todos los días",
-  "en la clase de español",
-  "en casa por la tarde",
-  "con mis amigos",
-  "durante el fin de semana",
-  "cuando tenemos tiempo"
+const SENTENCE_OBJECTS = [
+  { english: "new words", spanish: "palabras nuevas" },
+  { english: "the lesson", spanish: "la lección" },
+  { english: "short emails", spanish: "correos cortos" },
+  { english: "the notes", spanish: "los apuntes" },
+  { english: "the homework", spanish: "la tarea" },
+  { english: "the door", spanish: "la puerta" }
+];
+
+const SENTENCE_CONTEXTS = [
+  { english: "every day", spanish: "todos los días" },
+  { english: "in Spanish class", spanish: "en la clase de español" },
+  { english: "at home in the afternoon", spanish: "en casa por la tarde" },
+  { english: "with friends after school", spanish: "con amigos después de clases" },
+  { english: "on the weekend", spanish: "durante el fin de semana" },
+  { english: "before dinner", spanish: "antes de la cena" }
 ];
 
 function regularPresent(verb) {
@@ -102,18 +117,20 @@ function buildGeneratedDrills(verbs) {
   const sentenceBuilding = [];
 
   PRONOUNS.forEach((pronoun, personIndex) => {
-    verbs.forEach((verb) => {
+    verbs.forEach((verb, verbIndex) => {
       const forms = conjugatePresent(verb);
       const answer = forms[personIndex];
       conjugation.push({ prompt: `${pronoun} / ${verb}`, answer });
       recognition.push({ form: answer, meaning: `${pronoun} ${verb}` });
 
-      const [subjectKey, subjectText] = SENTENCE_SUBJECTS[personIndex];
-      const context = SENTENCE_TEMPLATES[personIndex % SENTENCE_TEMPLATES.length];
-      const english = `${subjectText} ${verb} ${context}`;
+      const possibleSubjects = SENTENCE_SUBJECTS.filter((subject) => subject.personIndex === personIndex);
+      const subject = possibleSubjects[verbIndex % possibleSubjects.length];
+      const object = SENTENCE_OBJECTS[(verbIndex + personIndex) % SENTENCE_OBJECTS.length];
+      const context = SENTENCE_CONTEXTS[(verbIndex * 2 + personIndex) % SENTENCE_CONTEXTS.length];
+      const english = `${subject.english} ${verb} ${object.english} ${context.english}`;
       sentenceBuilding.push({
         prompt: english,
-        answer: `${subjectKey === "yo" ? "" : subjectText + " "}${answer} ${context}`.trim()
+        answer: `${subject.showSubject ? subject.spanish + " " : ""}${answer} ${object.spanish} ${context.spanish}`.trim()
       });
     });
   });
