@@ -1,4 +1,5 @@
 import { curriculum } from "./data/curriculum.js";
+import { verbDefinitions } from "./data/verbDefinitions.js";
 
 const MODULES = [
   { id: "overview", label: "Overview", cardId: "module-overview" },
@@ -46,6 +47,8 @@ let activeModuleId = MODULES[0].id;
 let recognitionIndex = 0;
 let conjugationIndex = 0;
 let sentenceIndex = 0;
+let recognitionDeck = [];
+let conjugationDeck = [];
 
 const unitProgress = new Map();
 
@@ -58,6 +61,15 @@ function normalize(text) {
     .replaceAll("í", "i")
     .replaceAll("ó", "o")
     .replaceAll("ú", "u");
+}
+
+function shuffle(list) {
+  const clone = [...list];
+  for (let i = clone.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [clone[i], clone[j]] = [clone[j], clone[i]];
+  }
+  return clone;
 }
 
 function buildPhaseFilter() {
@@ -168,13 +180,13 @@ function renderChecklist() {
 }
 
 function renderRecognition() {
-  const item = currentUnit.recognition[recognitionIndex % currentUnit.recognition.length];
+  const item = recognitionDeck[recognitionIndex % recognitionDeck.length];
   el.recognitionArea.innerHTML = `<p><strong>${item.form}</strong> → ${item.meaning}</p>`;
-  el.recognitionCounter.textContent = `Card ${recognitionIndex % currentUnit.recognition.length + 1} of ${currentUnit.recognition.length}`;
+  el.recognitionCounter.textContent = `Card ${recognitionIndex % recognitionDeck.length + 1} of ${recognitionDeck.length}`;
 }
 
 function renderConjugation() {
-  const item = currentUnit.conjugation[conjugationIndex % currentUnit.conjugation.length];
+  const item = conjugationDeck[conjugationIndex % conjugationDeck.length];
   el.conjPrompt.textContent = item.prompt;
   el.conjInput.value = "";
   el.conjFeedback.textContent = "";
@@ -194,12 +206,16 @@ function selectUnit(unit) {
   recognitionIndex = 0;
   conjugationIndex = 0;
   sentenceIndex = 0;
+  recognitionDeck = shuffle(unit.recognition);
+  conjugationDeck = shuffle(unit.conjugation);
 
   el.unitTitle.textContent = unit.unit;
   el.unitPhase.textContent = unit.phase;
   el.unitMeta.textContent = `Lesson ${unit.lessonNumber} • ${unit.verbs.length} core verbs • ${unit.recognition.length} recognition cards • ${unit.conjugation.length} conjugation drills • ${unit.sentenceBuilding.length} sentence drills`;
   el.patternLesson.textContent = unit.pattern;
-  el.coreVerbs.innerHTML = unit.verbs.map((v) => `<li>${v}</li>`).join("");
+  el.coreVerbs.innerHTML = unit.verbs
+    .map((verb) => `<li><strong>${verb}</strong> — ${verbDefinitions[verb] ?? "definition coming soon"}</li>`)
+    .join("");
   el.storyLines.innerHTML = unit.story.map((line) => `<p>${line}</p>`).join("");
 
   renderObjectives();
@@ -222,7 +238,7 @@ el.nextRecognition.addEventListener("click", () => {
 });
 
 el.checkConj.addEventListener("click", () => {
-  const expected = currentUnit.conjugation[conjugationIndex % currentUnit.conjugation.length].answer;
+  const expected = conjugationDeck[conjugationIndex % conjugationDeck.length].answer;
   const good = normalize(el.conjInput.value) === normalize(expected);
   el.conjFeedback.textContent = good ? "✅ Correct" : `❌ Expected: ${expected}`;
   el.conjFeedback.className = `feedback ${good ? "ok" : "bad"}`;
