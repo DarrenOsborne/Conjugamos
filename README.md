@@ -21,9 +21,8 @@ A unit-focused Spanish verb learning app built with plain HTML, CSS, and modular
 
 ## Project structure
 
-- `data/phase1.js` — fully authored Phase 1 units.
-- `data/templateUnits.js` — generated template units for later phases.
-- `data/curriculum.js` — merged curriculum export with lesson IDs.
+- `data/lessons/lesson01.js` ... `data/lessons/lesson26.js` — one file per lesson for easy individual editing.
+- `data/curriculum.js` — imports all lesson files and builds final curriculum export with lesson IDs.
 - `app.js` — app logic and rendering.
 
 ## Run locally
