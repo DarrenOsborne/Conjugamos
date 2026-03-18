@@ -72,6 +72,104 @@ function shuffle(list) {
   return clone;
 }
 
+function escapeHtml(text) {
+  return text
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function renderInlineMarkdown(text) {
+  return escapeHtml(text)
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/`(.+?)`/g, "<code>$1</code>");
+}
+
+function markdownToHtml(markdown) {
+  const lines = markdown.split("\n");
+  const html = [];
+  let inList = false;
+
+  const closeList = () => {
+    if (inList) {
+      html.push("</ul>");
+      inList = false;
+    }
+  };
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      closeList();
+      continue;
+    }
+
+    if (trimmed.startsWith("### ")) {
+      closeList();
+      html.push(`<h4>${renderInlineMarkdown(trimmed.slice(4))}</h4>`);
+      continue;
+    }
+
+    if (trimmed.startsWith("#### ")) {
+      closeList();
+      html.push(`<h5>${renderInlineMarkdown(trimmed.slice(5))}</h5>`);
+      continue;
+    }
+
+    if (trimmed.startsWith("- ")) {
+      if (!inList) {
+        html.push("<ul>");
+        inList = true;
+      }
+      html.push(`<li>${renderInlineMarkdown(trimmed.slice(2))}</li>`);
+      continue;
+    }
+
+    closeList();
+    html.push(`<p>${renderInlineMarkdown(trimmed)}</p>`);
+  }
+
+  closeList();
+  return html.join("");
+}
+
+function buildPatternLessonMarkdown(unit) {
+  const conjugationExamples = unit.conjugation
+    .slice(0, 4)
+    .map((item) => `- **${item.prompt}** → \`${item.answer}\``)
+    .join("\n");
+  const sentenceExamples = unit.sentenceBuilding
+    .slice(0, 3)
+    .map((item) => `- ${item.prompt}: **${item.answer}**`)
+    .join("\n");
+  const reminders = [
+    "Match the verb ending (or helping verb) to the subject pronoun first.",
+    "Say the full chunk out loud before writing it to build fluency.",
+    "Double-check accents and irregular spellings after you answer."
+  ]
+    .map((item) => `- ${item}`)
+    .join("\n");
+
+  return `### ${unit.unit}: Pattern Guide
+**Core rule:** ${unit.pattern}
+
+#### How to form it (step by step)
+- Identify the subject (\`yo\`, \`tú\`, \`él/ella\`, \`nosotros\`, \`ellos\`).
+- Choose the correct verb pattern for this lesson.
+- Build the verb phrase in Spanish, then read it once naturally.
+
+#### Model conjugation examples
+${conjugationExamples}
+
+#### Useful sentence models
+${sentenceExamples}
+
+#### Accuracy checklist
+${reminders}`;
+}
+
 function buildPhaseFilter() {
   const phases = ["All phases", ...new Set(curriculum.map((u) => u.phase))];
   for (const phase of phases) {
@@ -212,7 +310,7 @@ function selectUnit(unit) {
   el.unitTitle.textContent = unit.unit;
   el.unitPhase.textContent = unit.phase;
   el.unitMeta.textContent = `Lesson ${unit.lessonNumber} • ${unit.verbs.length} core verbs • ${unit.recognition.length} recognition cards • ${unit.conjugation.length} conjugation drills • ${unit.sentenceBuilding.length} sentence drills`;
-  el.patternLesson.textContent = unit.pattern;
+  el.patternLesson.innerHTML = markdownToHtml(buildPatternLessonMarkdown(unit));
   el.coreVerbs.innerHTML = unit.verbs
     .map((verb) => `<li><strong>${verb}</strong> — ${verbDefinitions[verb] ?? "definition coming soon"}</li>`)
     .join("");
