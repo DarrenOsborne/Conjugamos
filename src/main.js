@@ -16935,6 +16935,19 @@ function renderSentence(unit) {
   el.sentenceFeedback.textContent = "";
   el.sentenceFeedback.className = "feedback";
 }
+function bindEnterToCheckThenNext(input, feedback, checkButton, nextButton) {
+  input.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter") {
+      return;
+    }
+    event.preventDefault();
+    if (!feedback.textContent) {
+      checkButton.click();
+      return;
+    }
+    nextButton.click();
+  });
+}
 function renderLesson(unit) {
   currentUnit = unit;
   el.unitTitle.textContent = unit.unit;
@@ -17010,6 +17023,8 @@ el.nextSentence.addEventListener("click", () => {
   state.sentenceIndex += 1;
   renderSentence(currentUnit);
 });
+bindEnterToCheckThenNext(el.conjInput, el.conjFeedback, el.checkConj, el.nextConj);
+bindEnterToCheckThenNext(el.sentenceInput, el.sentenceFeedback, el.checkSentence, el.nextSentence);
 window.addEventListener("hashchange", renderFromRoute);
 buildPhaseFilter();
 if (!window.location.hash.startsWith("#/lesson/")) {

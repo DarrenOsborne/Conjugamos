@@ -312,6 +312,27 @@ function renderSentence(unit: CurriculumUnit) {
   el.sentenceFeedback.className = "feedback";
 }
 
+function bindEnterToCheckThenNext(
+  input: HTMLInputElement,
+  feedback: HTMLParagraphElement,
+  checkButton: HTMLButtonElement,
+  nextButton: HTMLButtonElement
+) {
+  input.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter") {
+      return;
+    }
+
+    event.preventDefault();
+    if (!feedback.textContent) {
+      checkButton.click();
+      return;
+    }
+
+    nextButton.click();
+  });
+}
+
 function renderLesson(unit: CurriculumUnit) {
   currentUnit = unit;
   el.unitTitle.textContent = unit.unit;
@@ -398,6 +419,9 @@ el.nextSentence.addEventListener("click", () => {
   state.sentenceIndex += 1;
   renderSentence(currentUnit);
 });
+
+bindEnterToCheckThenNext(el.conjInput, el.conjFeedback, el.checkConj, el.nextConj);
+bindEnterToCheckThenNext(el.sentenceInput, el.sentenceFeedback, el.checkSentence, el.nextSentence);
 
 window.addEventListener("hashchange", renderFromRoute);
 
