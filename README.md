@@ -1,40 +1,34 @@
 # Conjugamos Planner
 
-A unit-focused Spanish verb learning app built with plain HTML, CSS, and modular JavaScript.
+A unit-focused Spanish verb learning app now powered by **Vite + TypeScript** with runtime lesson schema validation.
 
-## Features
+## What's improved
 
-- 26-unit curriculum progression across five phases.
-- Itemized lesson structure with 8 parts:
-  1. Unit focus objectives
-  2. Lesson step checklist
-  3. Pattern lesson
-  4. Core verb set (10 verbs per unit)
-  5. Recognition drills (expanded card sets)
-  6. Conjugation drills (typed answer)
-  7. Sentence building (typed answer)
-  8. Mini-dialogue/story
-- Lesson number badges and per-unit metadata.
-- Phase filter and clickable unit list.
-- Accent-insensitive checking for typed answers.
-- Curriculum organized into separate files under `data/`.
+- **TypeScript + Vite** project setup for safer refactors and modern dev/build workflows.
+- **Strict lesson schema** (via Zod) that validates every lesson file when curriculum is assembled.
+- **Route-scoped lesson state** (`#/lesson/<unit-id>/module/<module-id>`) so lesson activity state is isolated per unit.
+- 26-unit curriculum progression across five phases with modular lesson content files.
 
 ## Project structure
 
-- `data/lessons/lesson01.js` ... `data/lessons/lesson26.js` — one file per lesson for easy individual editing.
-- `data/curriculum.js` — imports all lesson files and builds final curriculum export with lesson IDs.
-- `app.js` — app logic and rendering.
+- `src/main.ts` — app rendering, routing, and route-scoped runtime state.
+- `src/data/schema.ts` — strict lesson schema and validation helper.
+- `src/data/curriculum.ts` — imports all lesson files, validates them, and builds curriculum.
+- `src/data/drillGenerator.ts` — generated drills expansion logic.
+- `src/data/lessons/lesson01.js` ... `lesson26.js` — one file per lesson.
 
 ## Run locally
 
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-Then open `http://localhost:8000`.
+Then open the local Vite URL shown in terminal (usually `http://localhost:5173`).
 
-## Deploy to GitHub Pages
+## Production build
 
-1. Push this repository to GitHub.
-2. In **Settings → Pages**, choose deployment from your main branch root.
-3. Save and open the generated Pages URL.
+```bash
+npm run build
+npm run preview
+```

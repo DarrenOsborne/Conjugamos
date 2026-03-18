@@ -1,4 +1,4 @@
-export const verbDefinitions = {
+export const verbDefinitions: Record<string, string> = {
   hablar: "to speak",
   comer: "to eat",
   vivir: "to live",
