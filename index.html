@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Conjugamos Lite</title>
+    <title>Conjugamos Planner</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="app-header">
-      <h1>Conjugamos Lite</h1>
-      <p>Simple Spanish verb trainer with typed answers (GitHub Pages ready).</p>
+      <h1>Conjugamos Planner</h1>
+      <p>Unit-focused Spanish curriculum with itemized lessons and progressive drills.</p>
     </header>
 
     <main class="layout">
@@ -23,25 +23,38 @@
       <section class="panel content-panel" id="unit-content">
         <h2 id="unit-title">Select a unit</h2>
         <p id="unit-phase" class="unit-phase"></p>
+        <p id="unit-meta" class="unit-meta"></p>
 
         <article class="card">
-          <h3>1) Pattern lesson</h3>
+          <h3>1) Unit focus</h3>
+          <ul id="focus-objectives" class="focus-list"></ul>
+        </article>
+
+        <article class="card">
+          <h3>2) Lesson steps</h3>
+          <p id="checklist-progress" class="unit-meta"></p>
+          <div id="lesson-checklist" class="checklist"></div>
+        </article>
+
+        <article class="card">
+          <h3>3) Pattern lesson</h3>
           <p id="pattern-lesson"></p>
         </article>
 
         <article class="card">
-          <h3>2) Core verb set</h3>
+          <h3>4) Core verb set</h3>
           <ul id="core-verbs" class="chips"></ul>
         </article>
 
         <article class="card">
-          <h3>3) Recognition drills</h3>
+          <h3>5) Recognition drills</h3>
+          <p id="recognition-counter" class="unit-meta"></p>
           <div id="recognition-area"></div>
           <button id="next-recognition" class="btn">Next recognition</button>
         </article>
 
         <article class="card">
-          <h3>4) Conjugation drills</h3>
+          <h3>6) Conjugation drills</h3>
           <p id="conj-prompt" class="prompt"></p>
           <div class="input-row">
             <input id="conj-input" type="text" placeholder="Type your answer..." autocomplete="off" />
@@ -52,7 +65,7 @@
         </article>
 
         <article class="card">
-          <h3>5) Sentence building</h3>
+          <h3>7) Sentence building</h3>
           <p id="sentence-prompt" class="prompt"></p>
           <div class="input-row">
             <input id="sentence-input" type="text" placeholder="Build the sentence..." autocomplete="off" />
@@ -63,18 +76,16 @@
         </article>
 
         <article class="card">
-          <h3>6) Mini-dialogue / story</h3>
+          <h3>8) Mini-dialogue / story</h3>
           <div id="story-lines" class="story"></div>
         </article>
       </section>
     </main>
 
     <footer class="app-footer">
-      <p>
-        Next step ready: hook in voice/audio (Web Speech API or external service) without changing this structure.
-      </p>
+      <p>Next step: track per-unit accuracy history in localStorage to personalize review sessions.</p>
     </footer>
 
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
   </body>
 </html>
