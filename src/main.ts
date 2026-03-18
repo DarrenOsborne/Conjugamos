@@ -220,6 +220,7 @@ function renderModuleNav() {
     button.type = "button";
     button.className = `module-btn ${module.id === activeModuleId ? "active" : ""}`;
     button.textContent = `${index + 1}. ${module.label}`;
+    button.setAttribute("aria-current", module.id === activeModuleId ? "step" : "false");
     button.addEventListener("click", () => {
       if (currentUnit) {
         navigate(currentUnit.id, module.id);
@@ -253,6 +254,9 @@ function renderUnits() {
     const button = document.createElement("button");
     button.className = `unit-btn ${currentUnit?.id === unit.id ? "active" : ""}`;
     button.innerHTML = `<span class="unit-pill">L${unit.lessonNumber}</span><span>${unit.unit}</span>`;
+    button.type = "button";
+    button.setAttribute("role", "option");
+    button.setAttribute("aria-selected", currentUnit?.id === unit.id ? "true" : "false");
     button.addEventListener("click", () => navigate(unit.id, activeModuleId));
     el.unitList.appendChild(button);
   });
