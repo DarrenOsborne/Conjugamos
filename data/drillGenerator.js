@@ -1,5 +1,28 @@
 const PRONOUNS = ["yo", "tú", "él/ella", "nosotros", "vosotros", "ellos/ellas"];
 
+const TARGET_VERBS = 15;
+const TARGET_RECOGNITION = 50;
+const TARGET_CONJUGATION = 50;
+const TARGET_SENTENCE_BUILDING = 10;
+
+const VERB_EXTENSION_POOL = [
+  "hablar",
+  "comer",
+  "vivir",
+  "estudiar",
+  "leer",
+  "escribir",
+  "hacer",
+  "tener",
+  "ir",
+  "venir",
+  "trabajar",
+  "practicar",
+  "aprender",
+  "caminar",
+  "abrir"
+];
+
 const PRESENT_IRREGULARS = {
   ser: ["soy", "eres", "es", "somos", "sois", "son"],
   estar: ["estoy", "estás", "está", "estamos", "estáis", "están"],
@@ -28,8 +51,7 @@ const PRESENT_IRREGULARS = {
   servir: ["sirvo", "sirves", "sirve", "servimos", "servís", "sirven"],
   preferir: ["prefiero", "prefieres", "prefiere", "preferimos", "preferís", "prefieren"],
   leer: ["leo", "lees", "lee", "leemos", "leéis", "leen"],
-  abrir: ["abro", "abres", "abre", "abrimos", "abrís", "abren"
-  ]
+  abrir: ["abro", "abres", "abre", "abrimos", "abrís", "abren"]
 };
 
 const SENTENCE_SUBJECTS = [
@@ -70,17 +92,29 @@ function conjugatePresent(verb) {
   return PRESENT_IRREGULARS[verb] ?? regularPresent(verb);
 }
 
-export function expandUnitDrills(unit) {
-  const verbs = unit.verbs.slice(0, 10);
+function uniqueWithPool(list, pool, target) {
+  const merged = [...list];
+  pool.forEach((item) => {
+    if (merged.length < target && !merged.includes(item)) {
+      merged.push(item);
+    }
+  });
+  return merged.slice(0, target);
+}
 
-  const hasCustomDrills = unit.recognition?.length && unit.conjugation?.length && unit.sentenceBuilding?.length;
-  if (hasCustomDrills) {
-    return {
-      ...unit,
-      verbs
-    };
+function cycleToLength(items, target) {
+  if (!items?.length) {
+    return [];
   }
 
+  const expanded = [];
+  for (let i = 0; i < target; i += 1) {
+    expanded.push(items[i % items.length]);
+  }
+  return expanded;
+}
+
+function buildGeneratedDrills(verbs) {
   const conjugation = [];
   const recognition = [];
   const sentenceBuilding = [];
@@ -94,8 +128,7 @@ export function expandUnitDrills(unit) {
 
       const [subjectKey, subjectText] = SENTENCE_SUBJECTS[personIndex];
       const context = SENTENCE_TEMPLATES[personIndex % SENTENCE_TEMPLATES.length];
-      const startsWithUppercase = subjectText;
-      const english = `${startsWithUppercase} ${verb} ${context}`;
+      const english = `${subjectText} ${verb} ${context}`;
       sentenceBuilding.push({
         prompt: english,
         answer: `${subjectKey === "yo" ? "" : subjectText + " "}${answer} ${context}`.trim()
@@ -103,11 +136,22 @@ export function expandUnitDrills(unit) {
     });
   });
 
+  return { recognition, conjugation, sentenceBuilding };
+}
+
+export function expandUnitDrills(unit) {
+  const verbs = uniqueWithPool(unit.verbs ?? [], VERB_EXTENSION_POOL, TARGET_VERBS);
+  const generated = buildGeneratedDrills(verbs);
+
+  const recognitionSource = unit.recognition?.length ? [...unit.recognition, ...generated.recognition] : generated.recognition;
+  const conjugationSource = unit.conjugation?.length ? [...unit.conjugation, ...generated.conjugation] : generated.conjugation;
+  const sentenceSource = unit.sentenceBuilding?.length ? [...unit.sentenceBuilding, ...generated.sentenceBuilding] : generated.sentenceBuilding;
+
   return {
     ...unit,
     verbs,
-    recognition,
-    conjugation,
-    sentenceBuilding
+    recognition: cycleToLength(recognitionSource, TARGET_RECOGNITION),
+    conjugation: cycleToLength(conjugationSource, TARGET_CONJUGATION),
+    sentenceBuilding: cycleToLength(sentenceSource, TARGET_SENTENCE_BUILDING)
   };
 }
