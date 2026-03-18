@@ -1,11 +1,25 @@
 import { curriculum } from "./data/curriculum.js";
 
+const MODULES = [
+  { id: "overview", label: "Overview", cardId: "module-overview" },
+  { id: "pattern", label: "Pattern Lesson", cardId: "module-pattern" },
+  { id: "verbs", label: "Core Verbs", cardId: "module-verbs" },
+  { id: "recognition", label: "Recognition", cardId: "module-recognition" },
+  { id: "conjugation", label: "Conjugation", cardId: "module-conjugation" },
+  { id: "sentence", label: "Sentence Building", cardId: "module-sentence" },
+  { id: "story", label: "Story", cardId: "module-story" }
+];
+
 const el = {
   phaseFilter: document.getElementById("phase-filter"),
   unitList: document.getElementById("unit-list"),
   unitTitle: document.getElementById("unit-title"),
   unitPhase: document.getElementById("unit-phase"),
   unitMeta: document.getElementById("unit-meta"),
+  lessonPath: document.getElementById("lesson-path"),
+  moduleNav: document.getElementById("module-nav"),
+  moduleCounter: document.getElementById("module-counter"),
+  moduleCards: Array.from(document.querySelectorAll(".module-card")),
   focusObjectives: document.getElementById("focus-objectives"),
   lessonChecklist: document.getElementById("lesson-checklist"),
   checklistProgress: document.getElementById("checklist-progress"),
@@ -28,6 +42,7 @@ const el = {
 };
 
 let currentUnit = null;
+let activeModuleId = MODULES[0].id;
 let recognitionIndex = 0;
 let conjugationIndex = 0;
 let sentenceIndex = 0;
@@ -53,6 +68,32 @@ function buildPhaseFilter() {
     option.textContent = phase;
     el.phaseFilter.appendChild(option);
   }
+}
+
+function buildModuleNav() {
+  el.moduleNav.innerHTML = "";
+  MODULES.forEach((module, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `module-btn ${module.id === activeModuleId ? "active" : ""}`;
+    button.textContent = `${index + 1}. ${module.label}`;
+    button.addEventListener("click", () => setActiveModule(module.id));
+    el.moduleNav.appendChild(button);
+  });
+}
+
+function setActiveModule(moduleId) {
+  activeModuleId = moduleId;
+  const module = MODULES.find((item) => item.id === moduleId);
+
+  el.moduleCards.forEach((card) => {
+    card.hidden = card.id !== module.cardId;
+  });
+
+  const moduleIndex = MODULES.findIndex((item) => item.id === moduleId);
+  el.moduleCounter.textContent = `Step ${moduleIndex + 1} of ${MODULES.length}`;
+  el.lessonPath.textContent = `L${currentUnit.lessonNumber} / ${currentUnit.unit} / ${module.label}`;
+  buildModuleNav();
 }
 
 function filteredUnits() {
@@ -156,7 +197,7 @@ function selectUnit(unit) {
 
   el.unitTitle.textContent = unit.unit;
   el.unitPhase.textContent = unit.phase;
-  el.unitMeta.textContent = `Lesson ${unit.lessonNumber} • ${unit.verbs.length} core verbs • ${unit.recognition.length} recognition cards`;
+  el.unitMeta.textContent = `Lesson ${unit.lessonNumber} • ${unit.verbs.length} core verbs • ${unit.recognition.length} recognition cards • ${unit.conjugation.length} conjugation drills • ${unit.sentenceBuilding.length} sentence drills`;
   el.patternLesson.textContent = unit.pattern;
   el.coreVerbs.innerHTML = unit.verbs.map((v) => `<li>${v}</li>`).join("");
   el.storyLines.innerHTML = unit.story.map((line) => `<p>${line}</p>`).join("");
@@ -167,6 +208,7 @@ function selectUnit(unit) {
   renderConjugation();
   renderSentence();
   renderUnits();
+  setActiveModule(activeModuleId);
 }
 
 el.phaseFilter.addEventListener("change", () => {
@@ -204,4 +246,5 @@ el.nextSentence.addEventListener("click", () => {
 });
 
 buildPhaseFilter();
+buildModuleNav();
 renderUnits();
