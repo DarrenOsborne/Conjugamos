@@ -62,19 +62,19 @@ export const phase1Units = [
       { form: "oigo", meaning: "I hear" },
       { form: "veo", meaning: "I see" },
       { form: "doy", meaning: "I give" },
-      { form: "sé", meaning: "I know" },
-      { form: "haces", meaning: "you do" },
-      { form: "ponen", meaning: "they put" },
-      { form: "sale", meaning: "he/she leaves" },
-      { form: "traemos", meaning: "we bring" },
-      { form: "oyen", meaning: "they hear" }
+      { form: "sé", meaning: "I know" }
     ],
     conjugation: [
       { prompt: "yo / tener", answer: "tengo" },
       { prompt: "yo / hacer", answer: "hago" },
+      { prompt: "yo / poner", answer: "pongo" },
+      { prompt: "yo / salir", answer: "salgo" },
       { prompt: "yo / traer", answer: "traigo" },
+      { prompt: "yo / caer", answer: "caigo" },
       { prompt: "yo / saber", answer: "sé" },
-      { prompt: "yo / oír", answer: "oigo" }
+      { prompt: "yo / oír", answer: "oigo" },
+      { prompt: "yo / ver", answer: "veo" },
+      { prompt: "yo / dar", answer: "doy" }
     ],
     sentenceBuilding: [
       { prompt: "I have homework", answer: "Tengo tarea" },
