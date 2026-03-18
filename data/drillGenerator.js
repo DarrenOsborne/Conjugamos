@@ -40,6 +40,39 @@ const PRESENT_IRREGULARS = {
   vestir: ["visto", "vistes", "viste", "vestimos", "vestís", "visten"]
 };
 
+
+
+const PERFECT_PARTICIPLES = {
+  abrir: "abierto",
+  cubrir: "cubierto",
+  decir: "dicho",
+  escribir: "escrito",
+  freír: "frito",
+  hacer: "hecho",
+  imprimir: "impreso",
+  morir: "muerto",
+  poner: "puesto",
+  resolver: "resuelto",
+  romper: "roto",
+  ver: "visto",
+  volver: "vuelto"
+};
+
+
+
+const ACCENTED_PERFECT_PARTICIPLES = {
+  caer: "caído",
+  creer: "creído",
+  leer: "leído",
+  oír: "oído",
+  poseer: "poseído",
+  traer: "traído"
+};
+
+const PERFECT_AUXILIARIES = {
+  presentPerfect: ["he", "has", "ha", "hemos", "habéis", "han"]
+};
+
 const SENTENCE_SUBJECTS = [
   ["yo", "Yo"],
   ["tú", "Tú"],
@@ -49,14 +82,24 @@ const SENTENCE_SUBJECTS = [
   ["ellos/ellas", "Ellos"]
 ];
 
-const SENTENCE_TEMPLATES = [
-  "todos los días",
-  "en la clase de español",
-  "en casa por la tarde",
-  "con mis amigos",
-  "durante el fin de semana",
-  "cuando tenemos tiempo"
-];
+const SENTENCE_TEMPLATES_BY_MODE = {
+  present: [
+    "todos los días",
+    "en la clase de español",
+    "en casa por la tarde",
+    "con mis amigos",
+    "durante el fin de semana",
+    "cuando tenemos tiempo"
+  ],
+  presentPerfect: [
+    "hoy",
+    "esta semana",
+    "últimamente",
+    "este mes",
+    "en mi vida",
+    "en esta clase"
+  ]
+};
 
 function regularPresent(verb) {
   if (verb.endsWith("ar")) {
@@ -84,6 +127,45 @@ function conjugatePresent(verb) {
   return PRESENT_IRREGULARS[verb] ?? regularPresent(verb);
 }
 
+
+
+function pastParticiple(verb) {
+  if (PERFECT_PARTICIPLES[verb]) {
+    return PERFECT_PARTICIPLES[verb];
+  }
+
+  if (verb.endsWith("ar")) {
+    return `${verb.slice(0, -2)}ado`;
+  }
+
+  if (ACCENTED_PERFECT_PARTICIPLES[verb]) {
+    return ACCENTED_PERFECT_PARTICIPLES[verb];
+  }
+
+  if (verb.endsWith("er") || verb.endsWith("ir")) {
+    return `${verb.slice(0, -2)}ido`;
+  }
+
+  return verb;
+}
+
+function conjugatePresentPerfect(verb) {
+  const participle = pastParticiple(verb);
+  return PERFECT_AUXILIARIES.presentPerfect.map((aux) => `${aux} ${participle}`);
+}
+
+function getDrillMode(unit) {
+  if (unit?.drillMode) {
+    return unit.drillMode;
+  }
+
+  if ((unit?.unit ?? "").toLowerCase().includes("present perfect")) {
+    return "presentPerfect";
+  }
+
+  return "present";
+}
+
 function cycleToLength(items, target) {
   if (!items?.length) {
     return [];
@@ -96,21 +178,27 @@ function cycleToLength(items, target) {
   return expanded;
 }
 
-function buildGeneratedDrills(verbs) {
+function buildGeneratedDrills(verbs, mode = "present") {
   const conjugation = [];
   const recognition = [];
   const sentenceBuilding = [];
 
+  const sentenceTemplates = SENTENCE_TEMPLATES_BY_MODE[mode] ?? SENTENCE_TEMPLATES_BY_MODE.present;
+  const getForms = mode === "presentPerfect" ? conjugatePresentPerfect : conjugatePresent;
+  const generationVerbs = mode === "presentPerfect" ? verbs.filter((verb) => verb !== "haber") : verbs;
+
   PRONOUNS.forEach((pronoun, personIndex) => {
-    verbs.forEach((verb) => {
-      const forms = conjugatePresent(verb);
+    generationVerbs.forEach((verb) => {
+      const forms = getForms(verb);
       const answer = forms[personIndex];
       conjugation.push({ prompt: `${pronoun} / ${verb}`, answer });
       recognition.push({ form: answer, meaning: `${pronoun} ${verb}` });
 
       const [subjectKey, subjectText] = SENTENCE_SUBJECTS[personIndex];
-      const context = SENTENCE_TEMPLATES[personIndex % SENTENCE_TEMPLATES.length];
-      const english = `${subjectText} ${verb} ${context}`;
+      const context = sentenceTemplates[personIndex % sentenceTemplates.length];
+      const english = mode === "presentPerfect"
+        ? `${subjectText} have/has ${verb} ${context}`
+        : `${subjectText} ${verb} ${context}`;
       sentenceBuilding.push({
         prompt: english,
         answer: `${subjectKey === "yo" ? "" : subjectText + " "}${answer} ${context}`.trim()
@@ -123,7 +211,8 @@ function buildGeneratedDrills(verbs) {
 
 export function expandUnitDrills(unit) {
   const verbs = [...(unit.verbs ?? [])];
-  const generated = buildGeneratedDrills(verbs);
+  const mode = getDrillMode(unit);
+  const generated = buildGeneratedDrills(verbs, mode);
 
   const recognitionSource = unit.recognition?.length ? [...generated.recognition, ...unit.recognition] : generated.recognition;
   const conjugationSource = unit.conjugation?.length ? [...generated.conjugation, ...unit.conjugation] : generated.conjugation;

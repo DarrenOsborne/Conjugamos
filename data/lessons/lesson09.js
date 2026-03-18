@@ -1,7 +1,8 @@
 export const lesson = {
   "phase": "Phase 2 — Everyday Structures",
   "unit": "Present Perfect Irregulars",
-  "pattern": "Some participles are irregular: hecho, dicho, visto, puesto, escrito, abierto, vuelto, roto.",
+  "drillMode": "presentPerfect",
+  "pattern": "Some participles are irregular: hecho, dicho, visto, puesto, escrito, abierto, vuelto, roto, muerto. Use present perfect for ongoing/vague time (hoy, esta semana), and preterite for finished time (ayer).",
   "lessonObjectives": [
     "Memorize the most common irregular participles.",
     "Use them accurately with haber.",
@@ -12,10 +13,10 @@ export const lesson = {
     "decir",
     "ver",
     "poner",
-    "escribir",
-    "abrir",
-    "volver",
     "romper",
+    "escribir",
+    "volver",
+    "abrir",
     "morir",
     "resolver"
   ],

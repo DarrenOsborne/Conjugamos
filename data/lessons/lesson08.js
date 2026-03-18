@@ -1,11 +1,13 @@
 export const lesson = {
   "phase": "Phase 2 — Everyday Structures",
   "unit": "Present Perfect",
-  "pattern": "Use haber (he, has, ha, hemos, han) + past participle to connect past actions to the present: he estudiado.",
+  "drillMode": "presentPerfect",
+  "pattern": "Use haber (he, has, ha, hemos, han) + past participle to connect past actions to the present: he estudiado. Use preterite for finished time frames like ayer.",
   "lessonObjectives": [
     "Form regular past participles.",
     "Conjugate haber in present perfect.",
-    "Talk about recent experiences and completed actions."
+    "Talk about recent experiences and completed actions.",
+    "Contrast ongoing-time markers (hoy, esta semana) with finished-time preterite markers (ayer, anoche)."
   ],
   "verbs": [
     "haber",
@@ -71,6 +73,14 @@ export const lesson = {
     {
       "prompt": "You have eaten already",
       "answer": "Has comido ya"
+    },
+    {
+      "prompt": "Today I have studied a lot",
+      "answer": "Hoy he estudiado mucho"
+    },
+    {
+      "prompt": "Yesterday I studied a lot",
+      "answer": "Ayer estudié mucho"
     },
     {
       "prompt": "We have finished the project",
