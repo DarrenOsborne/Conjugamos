@@ -1,0 +1,201 @@
+rank,spanish_infinitive,english,sentence1,sentence2,yo,tu,el,nosotros,vosotros,ellos
+1,ser,to be,* muy importante para el equipo en este momento.,* una buena opción para resolver el problema actual.,soy,eres,es,somos,sois,son
+2,estar,to be,* en casa después de un día muy largo de trabajo.,* listo para comenzar el proyecto sin ningún problema.,estoy,estás,está,estamos,estáis,están
+3,tener,to have,* muchas ideas interesantes para mejorar la situación actual.,* suficiente tiempo para terminar todo antes del plazo.,tengo,tienes,tiene,tenemos,tenéis,tienen
+4,hacer,to do/make,* un gran esfuerzo para completar la tarea correctamente.,* cambios importantes que afectan a todo el grupo.,hago,haces,hace,hacemos,hacéis,hacen
+5,poder,to be able to/can,* ayudar con el proyecto si hay tiempo suficiente.,* resolver el problema con una solución sencilla.,puedo,puedes,puede,podemos,podéis,pueden
+6,decir,to say/tell,* algo importante durante la reunión de esta tarde.,* la verdad aunque sea difícil en ese momento.,digo,dices,dice,decimos,decís,dicen
+7,ir,to go,* al trabajo temprano para evitar el tráfico intenso.,* a visitar un lugar nuevo durante el fin de semana.,voy,vas,va,vamos,vais,van
+8,ver,to see,* una película interesante después de terminar el trabajo.,* los resultados claramente en poco tiempo.,veo,ves,ve,vemos,veis,ven
+9,dar,to give,* una oportunidad para mejorar en esta situación difícil.,* apoyo necesario durante el proceso complicado.,doy,das,da,damos,dais,dan
+10,saber,to know,* la respuesta correcta después de analizar todo bien.,* cómo manejar la situación de manera adecuada.,sé,sabes,sabe,sabemos,sabéis,saben
+11,querer,to want/love,* intentar algo nuevo para mejorar las habilidades.,* pasar más tiempo con la familia este año.,quiero,quieres,quiere,queremos,queréis,quieren
+12,llegar,to arrive,* temprano para evitar problemas con el horario.,* a tiempo si todo sale como está planeado.,llego,llegas,llega,llegamos,llegáis,llegan
+13,pasar,to happen/pass,* algo inesperado durante el evento importante.,* mucho tiempo desde la última vez que ocurrió.,paso,pasas,pasa,pasamos,pasáis,pasan
+14,deber,to owe/should,* considerar todas las opciones antes de decidir.,* completar el trabajo antes de la fecha límite.,debo,debes,debe,debemos,debéis,deben
+15,poner,to put/place,* atención a los detalles en cada parte del proceso.,* la mesa antes de que lleguen todos los invitados.,pongo,pones,pone,ponemos,ponéis,ponen
+16,parecer,to seem,* una buena idea después de analizar la situación.,* complicado al principio pero fácil después.,parezco,pareces,parece,parecemos,parecéis,parecen
+17,quedar,to stay/remain,* en casa para descansar después del viaje largo.,* suficiente tiempo para terminar el proyecto.,quedo,quedas,queda,quedamos,quedáis,quedan
+18,creer,to believe,* en la posibilidad de mejorar con práctica constante.,* que todo saldrá bien al final del día.,creo,crees,cree,creemos,creéis,creen
+19,hablar,to speak,* con calma para explicar claramente la situación.,* sobre temas importantes durante la reunión.,hablo,hablas,habla,hablamos,habláis,hablan
+20,llevar,to carry/wear/bring,* ropa cómoda para el viaje largo de mañana.,* documentos necesarios para completar el proceso.,llevo,llevas,lleva,llevamos,lleváis,llevan
+21,dejar,to leave/let,* el trabajo listo antes de salir de la oficina.,* pasar la oportunidad si no parece adecuada.,dejo,dejas,deja,dejamos,dejáis,dejan
+22,seguir,to follow/continue,* el plan original aunque haya dificultades.,* trabajando hasta terminar todo correctamente.,sigo,sigues,sigue,seguimos,seguís,siguen
+23,encontrar,to find,* una solución efectiva para el problema actual.,* tiempo para descansar después de todo.,encuentro,encuentras,encuentra,encontramos,encontráis,encuentran
+24,llamar,to call,* a tiempo para confirmar los detalles importantes.,* a un experto si surge algún problema.,llamo,llamas,llama,llamamos,llamáis,llaman
+25,venir,to come,* temprano para preparar todo antes del evento.,* cuando haya más información disponible.,vengo,vienes,viene,venimos,venís,vienen
+26,pensar,to think,* en nuevas ideas para mejorar el rendimiento.,* cuidadosamente antes de tomar una decisión.,pienso,piensas,piensa,pensamos,pensáis,piensan
+27,salir,to leave/go out,* temprano para evitar el tráfico en la ciudad.,* con amigos después de terminar el trabajo.,salgo,sales,sale,salimos,salís,salen
+28,volver,to return,* a casa después de un día muy largo.,* cuando todo esté completamente resuelto.,vuelvo,vuelves,vuelve,volvemos,volvéis,vuelven
+29,tomar,to take/drink,* decisiones importantes durante el proceso difícil.,* agua suficiente durante el día caluroso.,tomo,tomas,toma,tomamos,tomáis,toman
+30,conocer,to know/meet,* nuevas personas durante el evento importante.,* mejor la ciudad después de vivir allí.,conozco,conoces,conoce,conocemos,conocéis,conocen
+31,vivir,to live,* en un lugar tranquilo lejos del ruido constante.,* experiencias que cambian la perspectiva de vida.,vivo,vives,vive,vivimos,vivís,viven
+32,sentir,to feel/regret,* mucha emoción al ver los resultados finales.,* preocupación por la situación actual.,siento,sientes,siente,sentimos,sentís,sienten
+33,tratar,to try/treat,* resolver el problema con diferentes métodos.,* bien a todas las personas en el equipo.,trato,tratas,trata,tratamos,tratáis,tratan
+34,mirar,to look/watch,* atentamente para no perder ningún detalle.,* el cielo durante una noche clara.,miro,miras,mira,miramos,miráis,miran
+35,contar,to count/tell,* una historia interesante sobre la experiencia.,* el dinero antes de realizar el pago.,cuento,cuentas,cuenta,contamos,contáis,cuentan
+36,empezar,to begin,* un nuevo proyecto con mucha motivación.,* ahora para aprovechar mejor el tiempo.,empiezo,empiezas,empieza,empezamos,empezáis,empiezan
+37,esperar,to wait/hope,* pacientemente hasta recibir una respuesta clara.,* buenas noticias en los próximos días.,espero,esperas,espera,esperamos,esperáis,esperan
+38,buscar,to search/look for,* soluciones efectivas para mejorar el proceso.,* información antes de tomar una decisión.,busco,buscas,busca,buscamos,buscáis,buscan
+39,existir,to exist,* razones suficientes para cambiar la estrategia.,* muchas opciones disponibles en este momento.,existo,existes,existe,existimos,existís,existen
+40,entrar,to enter,* al edificio principal después de registrarse.,* rápidamente antes de que cierre la puerta.,entro,entras,entra,entramos,entráis,entran
+41,trabajar,to work,* duro para alcanzar los objetivos establecidos.,* en equipo para lograr mejores resultados.,trabajo,trabajas,trabaja,trabajamos,trabajáis,trabajan
+42,escribir,to write,* un informe detallado sobre el proyecto actual.,* notas importantes durante la reunión.,escribo,escribes,escribe,escribimos,escribís,escriben
+43,perder,to lose,* tiempo valioso si no se actúa rápidamente.,* la oportunidad si no se toma la decisión.,pierdo,pierdes,pierde,perdemos,perdéis,pierden
+44,producir,to produce,* resultados positivos con esfuerzo constante.,* cambios importantes en poco tiempo.,produzco,produces,produce,producimos,producís,producen
+45,ocurrir,to occur/happen,* algo inesperado durante el proceso planificado.,* con frecuencia en situaciones similares.,ocurro,ocurres,ocurre,ocurrimos,ocurrís,ocurren
+46,entender,to understand,* completamente la situación antes de actuar.,* mejor con más práctica y experiencia.,entiendo,entiendes,entiende,entendemos,entendéis,entienden
+47,pedir,to ask for/order,* ayuda cuando la situación lo requiere.,* información adicional para tomar decisiones.,pido,pides,pide,pedimos,pedís,piden
+48,recibir,to receive,* noticias importantes durante el día.,* apoyo necesario en momentos difíciles.,recibo,recibes,recibe,recibimos,recibís,reciben
+49,recordar,to remember,* detalles importantes antes de comenzar.,* claramente lo que ocurrió ayer.,recuerdo,recuerdas,recuerda,recordamos,recordáis,recuerdan
+50,terminar,to finish/end,* el trabajo antes de la fecha límite.,* todo correctamente sin errores.,termino,terminas,termina,terminamos,termináis,terminan
+51,permitir,to permit/allow,* el acceso solo a personas autorizadas en el edificio.,* antes de tomar una decisión final.,permito,permites,permite,permitimos,permitís,permiten
+52,aparecer,to appear,* de repente en medio de la conversación sin aviso.,* cuando menos se espera en situaciones así.,aparezco,apareces,aparece,aparecemos,aparecéis,aparecen
+53,conseguir,to get/obtain,* buenos resultados con esfuerzo constante.,* todo sin ayuda en este caso.,consigo,consigues,consigue,conseguimos,conseguís,consiguen
+54,comenzar,to begin/start,* un nuevo proyecto con muchas expectativas.,* temprano para aprovechar el día.,comienzo,comienzas,comienza,comenzamos,comenzáis,comienzan
+55,servir,to serve,* como ejemplo para futuras generaciones.,* de ayuda en momentos difíciles.,sirvo,sirves,sirve,servimos,servís,sirven
+56,sacar,to take out/remove,* conclusiones claras después del análisis.,* tiempo para descansar bien.,saco,sacas,saca,sacamos,sacáis,sacan
+57,necesitar,to need,* más información antes de continuar.,* ayuda externa.,necesito,necesitas,necesita,necesitamos,necesitáis,necesitan
+58,mantener,to maintain/keep,* la calma en situaciones complicadas.,* el equilibrio en momentos así.,mantengo,mantienes,mantiene,mantenemos,mantenéis,mantienen
+59,resultar,to result/turn out,* ser más complicado de lo esperado.,* positivo con el enfoque correcto.,resulto,resultas,resulta,resultamos,resultáis,resultan
+60,leer,to read,* un libro interesante durante el viaje.,* antes de dormir cada noche.,leo,lees,lee,leemos,leéis,leen
+61,caer,to fall,* en errores si no se presta atención.,* fácilmente bajo presión.,caigo,caes,cae,caemos,caéis,caen
+62,cambiar,to change,* la estrategia según la situación.,* con el paso del tiempo.,cambio,cambias,cambia,cambiamos,cambiáis,cambian
+63,presentar,to present/introduce,* ideas nuevas durante la reunión.,* bien los resultados.,presento,presentas,presenta,presentamos,presentáis,presentan
+64,crear,to create,* oportunidades donde no existen.,* algo único con creatividad.,creo,creas,crea,creamos,creáis,crean
+65,abrir,to open,* nuevas puertas en la carrera profesional.,* la mente a nuevas ideas.,abro,abres,abre,abrimos,abrís,abren
+66,considerar,to consider,* todas las opciones antes de actuar.,* cada detalle importante.,considero,consideras,considera,consideramos,consideráis,consideran
+67,oír,to hear,* claramente lo que dicen los demás.,* ruidos extraños por la noche.,oigo,oyes,oye,oímos,oís,oyen
+68,acabar,to finish/end,* el proyecto antes del plazo.,* todo correctamente.,acabo,acabas,acaba,acabamos,acabáis,acaban
+69,convertir,to convert/turn into,* ideas en acciones concretas.,* algo simple en complejo.,convierto,conviertes,convierte,convertimos,convertís,convierten
+70,ganar,to win/earn,* experiencia con cada intento.,* confianza con el tiempo.,gano,ganas,gana,ganamos,ganáis,ganan
+71,formar,to form,* parte de un equipo exitoso.,* una base sólida para el futuro.,formo,formas,forma,formamos,formáis,forman
+72,traer,to bring,* beneficios a largo plazo.,* ideas nuevas al grupo.,traigo,traes,trae,traemos,traéis,traen
+73,partir,to leave/depart/split,* hacia un destino desconocido.,* sin mirar atrás.,parto,partes,parte,partimos,partís,parten
+74,morir,to die,* en el intento si no se planifica.,* simbólicamente en el proceso.,muero,mueres,muere,morimos,morís,mueren
+75,aceptar,to accept,* cambios inevitables en la vida.,* la realidad tal como es.,acepto,aceptas,acepta,aceptamos,aceptáis,aceptan
+76,realizar,to carry out/achieve,* tareas complejas con precisión.,* grandes logros con esfuerzo.,realizo,realizas,realiza,realizamos,realizáis,realizan
+77,suponer,to suppose/assume,* un riesgo en ciertas decisiones.,* problemas si no se analiza.,supongo,supones,supone,suponemos,suponéis,suponen
+78,comprender,to understand,* mejor la situación con tiempo.,* antes de actuar.,comprendo,comprendes,comprende,comprendemos,comprendéis,comprenden
+79,lograr,to achieve/manage,* metas importantes con dedicación.,* resultados sorprendentes.,logro,logras,logra,logramos,lográis,logran
+80,explicar,to explain,* claramente el problema a otros.,* con ejemplos simples.,explico,explicas,explica,explicamos,explicáis,explican
+81,preguntar,to ask,* dudas durante la reunión.,* antes de asumir algo.,pregunto,preguntas,pregunta,preguntamos,preguntáis,preguntan
+82,tocar,to touch/play,* temas delicados en la conversación.,* música para relajarse.,toco,tocas,toca,tocamos,tocáis,tocan
+83,reconocer,to recognize,* errores para mejorar después.,* el esfuerzo de otros.,reconozco,reconoces,reconoce,reconocemos,reconocéis,reconocen
+84,estudiar,to study,* constantemente para mejorar habilidades.,* antes de un examen.,estudio,estudias,estudia,estudiamos,estudiáis,estudian
+85,alcanzar,to reach/attain,* objetivos con trabajo constante.,* niveles altos con práctica.,alcanzo,alcanzas,alcanza,alcanzamos,alcanzáis,alcanzan
+86,nacer,to be born,* una idea en el momento adecuado.,* una oportunidad inesperada.,nazco,naces,nace,nacemos,nacéis,nacen
+87,dirigir,to direct/manage,* un equipo con responsabilidad.,* bien los recursos.,dirijo,diriges,dirige,dirigimos,dirigís,dirigen
+88,correr,to run,* riesgos innecesarios en la vida.,* rápido en situaciones urgentes.,corro,corres,corre,corremos,corréis,corren
+89,utilizar,to use,* herramientas adecuadas para el trabajo.,* recursos disponibles.,utilizo,utilizas,utiliza,utilizamos,utilizáis,utilizan
+90,pagar,to pay,* el precio de una mala decisión.,* a tiempo siempre.,pago,pagas,paga,pagamos,pagáis,pagan
+91,ayudar,to help,* a otros en momentos difíciles.,* mucho con pequeñas acciones.,ayudo,ayudas,ayuda,ayudamos,ayudáis,ayudan
+92,gustar,to like,* mucho la idea propuesta.,* a todos en el equipo.,gusto,gustas,gusta,gustamos,gustáis,gustan
+93,jugar,to play,* un papel importante en el proyecto.,* con estrategia para ganar.,juego,juegas,juega,jugamos,jugáis,juegan
+94,escuchar,to listen,* atentamente durante la reunión.,* antes de responder.,escucho,escuchas,escucha,escuchamos,escucháis,escuchan
+95,cumplir,to fulfill/complete,* con todas las responsabilidades.,* lo prometido siempre.,cumplo,cumples,cumple,cumplimos,cumplís,cumplen
+96,ofrecer,to offer,* soluciones efectivas al problema.,* ayuda en el momento justo.,ofrezco,ofreces,ofrece,ofrecemos,ofrecéis,ofrecen
+97,descubrir,to discover,* nuevas oportunidades en el camino.,* algo inesperado al investigar.,descubro,descubres,descubre,descubrimos,descubrís,descubren
+98,levantar,to lift/raise,* la voz en situaciones injustas.,* ánimo en momentos difíciles.,levanto,levantas,levanta,levantamos,levantáis,levantan
+99,intentar,to try/attempt,* resolver el problema sin ayuda.,* varias veces si falla.,intento,intentas,intenta,intentamos,intentáis,intentan
+100,usar,to use,* correctamente las herramientas disponibles.,* diferentes métodos para lograrlo.,uso,usas,usa,usamos,usáis,usan
+101,decidir,to decide,* con calma después de analizar todo.,* bien antes de actuar.,decido,decides,decide,decidimos,decidís,deciden
+102,repetir,to repeat,* el proceso para mejorar resultados.,* errores si no se corrige.,repito,repites,repite,repetimos,repetís,repiten
+103,cerrar,to close,* la puerta al salir del lugar.,* bien antes de irse.,cierro,cierras,cierra,cerramos,cerráis,cierran
+104,comer,to eat,* algo ligero antes de trabajar.,* saludable cada día.,como,comes,come,comemos,coméis,comen
+105,beber,to drink,* suficiente agua durante el día.,* con moderación.,bebo,bebes,bebe,bebemos,bebéis,beben
+106,caminar,to walk,* despacio para disfrutar el entorno.,* largas distancias sin problema.,camino,caminas,camina,caminamos,camináis,caminan
+107,vender,to sell,* productos de alta calidad.,* más con buena estrategia.,vendo,vendes,vende,vendemos,vendéis,venden
+108,recoger,to pick up/collect,* información relevante del lugar.,* datos importantes.,recojo,recoges,recoge,recogemos,recogéis,recogen
+109,romper,to break,* el silencio en una reunión incómoda.,* algo sin querer.,rompo,rompes,rompe,rompemos,rompéis,rompen
+110,aprender,to learn,* algo nuevo cada día.,* con práctica constante.,aprendo,aprendes,aprende,aprendemos,aprendéis,aprenden
+111,añadir,to add,* detalles importantes al informe.,* más información relevante.,añado,añades,añade,añadimos,añadís,añaden
+112,escoger,to choose,* la mejor opción disponible.,* con cuidado.,escojo,escoges,escoge,escogemos,escogéis,escogen
+113,dormir,to sleep,* bien para rendir mejor.,* suficiente cada noche.,duermo,duermes,duerme,dormimos,dormís,duermen
+114,enseñar,to teach/show,* habilidades a otros en el equipo.,* con ejemplos claros.,enseño,enseñas,enseña,enseñamos,enseñáis,enseñan
+115,ocupar,to occupy/use,* tiempo en actividades productivas.,* espacio innecesario.,ocupo,ocupas,ocupa,ocupamos,ocupáis,ocupan
+116,olvidar,to forget,* detalles importantes fácilmente.,* menos con práctica.,olvido,olvidas,olvida,olvidamos,olvidáis,olvidan
+117,mostrar,to show,* resultados al final del proceso.,* evidencia clara.,muestro,muestras,muestra,mostramos,mostráis,muestran
+118,crecer,to grow,* profesionalmente con experiencia.,* con el tiempo.,crezco,creces,crece,crecemos,crecéis,crecen
+119,subir,to go up/upload,* de nivel con esfuerzo constante.,* rápidamente en poco tiempo.,subo,subes,sube,subimos,subís,suben
+120,bajar,to go down/lower,* el ritmo para evitar errores.,* poco a poco.,bajo,bajas,baja,bajamos,bajáis,bajan
+121,detener,to stop/detain,* el proceso si hay problemas.,* de inmediato en caso urgente.,detengo,detienes,detiene,detenemos,detenéis,detienen
+122,desarrollar,to develop,* habilidades nuevas constantemente.,* proyectos innovadores.,desarrollo,desarrollas,desarrolla,desarrollamos,desarrolláis,desarrollan
+123,asumir,to assume,* responsabilidades importantes.,* riesgos calculados.,asumo,asumes,asume,asumimos,asumís,asumen
+124,mejorar,to improve,* el rendimiento con práctica.,* mucho con esfuerzo.,mejoro,mejoras,mejora,mejoramos,mejoráis,mejoran
+125,contener,to contain,* emociones en situaciones difíciles.,* sin control.,contengo,contienes,contiene,contenemos,contenéis,contienen
+126,establecer,to establish,* reglas claras desde el inicio.,* límites adecuados.,establezco,estableces,establece,establecemos,establecéis,establecen
+127,andar,to walk/go,* sin rumbo durante el día.,* largas distancias.,ando,andas,anda,andamos,andáis,andan
+128,agregar,to add,* información extra al reporte.,* detalles importantes.,agrego,agregas,agrega,agregamos,agregáis,agregan
+129,obtener,to obtain/get,* resultados positivos con esfuerzo.,* beneficios claros.,obtengo,obtienes,obtiene,obtenemos,obtenéis,obtienen
+130,mantenerse,to stay/remain,* firme en la decisión tomada.,* estable en el proceso.,me mantengo,te mantienes,se mantiene,nos mantenemos,os mantenéis,se mantienen
+131,reducir,to reduce,* costos sin afectar calidad.,* errores con práctica.,reduzco,reduces,reduce,reducimos,reducís,reducen
+132,regresar,to return,* al lugar de origen después.,* cuando sea necesario.,regreso,regresas,regresa,regresamos,regresáis,regresan
+133,apoyar,to support,* a otros en momentos difíciles.,* decisiones importantes.,apoyo,apoyas,apoya,apoyamos,apoyáis,apoyan
+134,firmar,to sign,* documentos oficiales necesarios.,* correctamente.,firmo,firmas,firma,firmamos,firmáis,firman
+135,responder,to respond/answer,* rápidamente a las preguntas.,* con claridad.,respondo,respondes,responde,respondemos,respondéis,responden
+136,probar,to try/test,* diferentes métodos para lograrlo.,* algo nuevo.,pruebo,pruebas,prueba,probamos,probáis,prueban
+137,visitar,to visit,* lugares interesantes durante el viaje.,* amigos cercanos.,visito,visitas,visita,visitamos,visitáis,visitan
+138,afirmar,to affirm/state,* con seguridad lo que se sabe.,* hechos importantes.,afirmo,afirmas,afirma,afirmamos,afirmáis,afirman
+139,imaginar,to imagine,* escenarios posibles en el futuro.,* soluciones creativas.,imagino,imaginas,imagina,imaginamos,imagináis,imaginan
+140,desear,to desire/wish,* lo mejor para todos.,* cambios positivos.,deseo,deseas,desea,deseamos,deseáis,desean
+141,significar,to mean/signify,* mucho en el contexto actual.,* algo diferente.,significo,significas,significa,significamos,significáis,significan
+142,escapar,to escape,* de la rutina diaria.,* fácilmente si no se controla.,escapo,escapas,escapa,escapamos,escapáis,escapan
+143,depender,to depend,* de factores externos.,* de muchas variables.,dependo,dependes,depende,dependemos,dependéis,dependen
+144,proteger,to protect,* recursos importantes.,* bien todo.,protejo,proteges,protege,protegemos,protegéis,protegen
+145,unir,to join/unite,* fuerzas para lograr más.,* equipos completos.,uno,unes,une,unimos,unís,unen
+146,exponer,to expose/present,* ideas frente al grupo.,* claramente.,expongo,expones,expone,exponemos,exponéis,exponen
+147,comprobar,to verify/check,* datos antes de usarlos.,* todo bien.,compruebo,compruebas,comprueba,comprobamos,comprobáis,comprueban
+148,faltar,to lack/be missing,* información clave.,* tiempo suficiente.,falto,faltas,falta,faltamos,faltáis,faltan
+149,notar,to notice,* cambios pequeños.,* detalles importantes.,noto,notas,nota,notamos,notáis,notan
+150,mover,to move,* rápidamente para evitar problemas.,* objetos pesados.,muevo,mueves,mueve,movemos,movéis,mueven
+151,participar,to participate,* activamente en el evento.,* en discusiones importantes.,participo,participas,participa,participamos,participáis,participan
+152,sufrir,to suffer,* consecuencias de malas decisiones.,* mucho estrés.,sufro,sufres,sufre,sufrimos,sufrís,sufren
+153,enviar,to send,* información por correo.,* mensajes importantes.,envío,envías,envía,enviamos,enviáis,envían
+154,anunciar,to announce,* cambios importantes.,* noticias relevantes.,anuncio,anuncias,anuncia,anunciamos,anunciáis,anuncian
+155,proponer,to propose,* soluciones nuevas.,* ideas innovadoras.,propongo,propones,propone,proponemos,proponéis,proponen
+156,temer,to fear,* lo desconocido.,* consecuencias negativas.,temo,temes,teme,tememos,teméis,temen
+157,aplicar,to apply,* conocimientos en la práctica.,* métodos efectivos.,aplico,aplicas,aplica,aplicamos,aplicáis,aplican
+158,mencionar,to mention,* detalles importantes.,* nombres relevantes.,menciono,mencionas,menciona,mencionamos,mencionáis,mencionan
+159,describir,to describe,* situaciones complejas.,* claramente un problema.,describo,describes,describe,describimos,describís,describen
+160,elevar,to raise/lift,* el nivel del trabajo.,* expectativas.,elevo,elevas,eleva,elevamos,eleváis,elevan
+161,indicar,to indicate,* el camino correcto.,* errores fácilmente.,indico,indicas,indica,indicamos,indicáis,indican
+162,asegurar,to assure/ensure,* resultados positivos.,* éxito futuro.,aseguro,aseguras,asegura,aseguramos,aseguráis,aseguran
+163,continuar,to continue,* con el plan original.,* sin interrupciones.,continúo,continúas,continúa,continuamos,continuáis,continúan
+164,observar,to observe,* cuidadosamente el entorno.,* cambios rápidos.,observo,observas,observa,observamos,observáis,observan
+165,revelar,to reveal,* información importante.,* secretos ocultos.,revelo,revelas,revela,revelamos,reveláis,revelan
+166,soler,to usually do,* hacer esto cada día.,* ocurrir frecuentemente.,suelo,sueles,suele,solemos,soléis,suelen
+167,superar,to surpass/overcome,* obstáculos difíciles.,* límites personales.,supero,superas,supera,superamos,superáis,superan
+168,acercar,to bring near,* posiciones opuestas.,* soluciones.,acerco,acercas,acerca,acercamos,acercáis,acercan
+169,disponer,to dispose/arrange,* recursos disponibles.,* tiempo limitado.,dispongo,dispones,dispone,disponemos,disponéis,disponen
+170,acordar,to agree/remember,* decisiones importantes.,* detalles clave.,acuerdo,acuerdas,acuerda,acordamos,acordáis,acuerdan
+171,asistir,to attend/help,* a eventos importantes.,* reuniones clave.,asisto,asistes,asiste,asistimos,asistís,asisten
+172,comunicar,to communicate,* ideas claramente.,* mensajes complejos.,comunico,comunicas,comunica,comunicamos,comunicáis,comunican
+173,exigir,to demand/require,* altos estándares.,* mucho esfuerzo.,exijo,exiges,exige,exigimos,exigís,exigen
+174,marcar,to mark/score,* diferencia clara.,* puntos importantes.,marco,marcas,marca,marcamos,marcáis,marcan
+175,suprimir,to suppress/delete,* información innecesaria.,* errores.,suprimo,suprimes,suprime,suprimimos,suprimís,suprimen
+176,elegir,to choose,* entre varias opciones.,* correctamente.,elijo,eliges,elige,elegimos,elegís,eligen
+177,depositar,to deposit,* dinero en la cuenta.,* confianza.,deposito,depositas,deposita,depositamos,depositáis,depositan
+178,reunir,to gather/meet,* al equipo completo.,* recursos.,reúno,reúnes,reúne,reunimos,reunís,reúnen
+179,convertirse,to become,* en algo mejor.,* con esfuerzo.,me convierto,te conviertes,se convierte,nos convertimos,os convertís,se convierten
+180,admitir,to admit,* errores cometidos.,* la verdad.,admito,admites,admite,admitimos,admitís,admiten
+181,evitar,to avoid,* problemas innecesarios.,* riesgos.,evito,evitas,evita,evitamos,evitáis,evitan
+182,publicar,to publish,* contenido en línea.,* información útil.,publico,publicas,publica,publicamos,publicáis,publican
+183,encender,to turn on/light,* la luz al entrar.,* fuego.,enciendo,enciendes,enciende,encendemos,encendéis,encienden
+184,apagar,to turn off,* dispositivos antes de salir.,* luces.,apago,apagas,apaga,apagamos,apagáis,apagan
+185,extrañar,to miss/find strange,* a alguien cercano.,* situaciones raras.,extraño,extrañas,extraña,extrañamos,extrañáis,extrañan
+186,cortar,to cut,* materiales con cuidado.,* contacto.,corto,cortas,corta,cortamos,cortáis,cortan
+187,volar,to fly,* alto en el cielo.,* lejos.,vuelo,vuelas,vuela,volamos,voláis,vuelan
+188,soltar,to release/let go,* tensiones acumuladas.,* objetos.,suelto,sueltas,suelta,soltamos,soltáis,sueltan
+189,vestir,to dress,* adecuadamente para la ocasión.,* bien.,visto,vistes,viste,vestimos,vestís,visten
+190,lavar,to wash,* ropa sucia.,* manos.,lavo,lavas,lava,lavamos,laváis,lavan
+191,cocinar,to cook,* comidas deliciosas.,* algo simple.,cocino,cocinas,cocina,cocinamos,cocináis,cocinan
+192,viajar,to travel,* a lugares nuevos.,* mucho.,viajo,viajas,viaja,viajamos,viajáis,viajan
+193,limpiar,to clean,* espacios desordenados.,* superficies.,limpio,limpias,limpia,limpiamos,limpiáis,limpian
+194,cruzar,to cross,* la calle con cuidado.,* límites.,cruzo,cruzas,cruza,cruzamos,cruzáis,cruzan
+195,plantar,to plant,* árboles nuevos.,* semillas.,planto,plantas,planta,plantamos,plantáis,plantan
+196,pesar,to weigh/regret,* decisiones tomadas.,* mucho.,peso,pesas,pesa,pesamos,pesáis,pesan
+197,nadar,to swim,* en agua tranquila.,* rápido.,nado,nadas,nada,nadamos,nadáis,nadan
+198,gritar,to shout,* fuerte en emergencias.,* de emoción.,grito,gritas,grita,gritamos,gritáis,gritan
+199,reír,to laugh,* en buenos momentos.,* mucho.,río,ríes,ríe,reímos,reís,ríen
+200,llover,to rain,* durante toda la noche.,* inesperadamente.,lluevo,llueves,llueve,llovemos,llovéis,llueven

@@ -1,99 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Conjugamos Planner</title>
-    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <title>Conjugamos Drill</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to lesson content</a>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Spanish Verb Drill</p>
+        <h1>Fill the blank. Hit Enter. Keep moving.</h1>
+        <p class="subtitle">
+          Each round pulls a random verb, a random sentence, and a random
+          subject form from your CSV.
+        </p>
+      </section>
 
-    <header class="app-header" role="banner">
-      <p class="eyebrow">Spanish Learning Workspace</p>
-      <h1>Conjugamos Planner</h1>
-      <p>Focused curriculum, one unit at a time, with clear steps and quick practice.</p>
-    </header>
-
-    <main id="main-content" class="layout" tabindex="-1">
-      <aside class="panel units-panel" aria-label="Unit selection and filtering">
-        <h2>Units</h2>
-        <label for="phase-filter">Filter by phase</label>
-        <select id="phase-filter"></select>
-        <div id="unit-list" class="unit-list" role="listbox" aria-label="Available units"></div>
-      </aside>
-
-      <section class="panel content-panel" id="unit-content" aria-live="polite">
-        <p id="lesson-path" class="lesson-path"></p>
-        <h2 id="unit-title">Select a unit</h2>
-        <p id="unit-phase" class="unit-phase"></p>
-        <p id="unit-meta" class="unit-meta"></p>
-
-        <nav id="module-nav" class="module-nav" aria-label="Lesson module navigation"></nav>
-        <p id="module-counter" class="unit-meta" aria-live="polite"></p>
-
-        <article class="card module-card" id="module-overview">
-          <h3>1) Unit focus</h3>
-          <ul id="focus-objectives" class="focus-list"></ul>
-
-          <h3>2) Lesson steps</h3>
-          <p id="checklist-progress" class="unit-meta" aria-live="polite"></p>
-          <div id="lesson-checklist" class="checklist"></div>
-        </article>
-
-        <article class="card module-card" id="module-pattern" hidden>
-          <h3>3) Pattern lesson</h3>
-          <div id="pattern-lesson" class="markdown-content"></div>
-        </article>
-
-        <article class="card module-card" id="module-verbs" hidden>
-          <h3>4) Core verb set</h3>
-          <ul id="core-verbs" class="chips"></ul>
-        </article>
-
-        <article class="card module-card" id="module-recognition" hidden>
-          <h3>5) Recognition drills</h3>
-          <p id="recognition-counter" class="unit-meta" aria-live="polite"></p>
-          <div id="recognition-area"></div>
-          <button id="next-recognition" class="btn">Next recognition</button>
-        </article>
-
-        <article class="card module-card" id="module-conjugation" hidden>
-          <h3>6) Conjugation drills</h3>
-          <p id="conj-prompt" class="prompt"></p>
-          <div class="input-row">
-            <label class="sr-only" for="conj-input">Conjugation answer</label>
-            <input id="conj-input" type="text" placeholder="Type your answer..." autocomplete="off" />
-            <button id="check-conj" class="btn primary">Check</button>
-            <button id="next-conj" class="btn">Next</button>
+      <section class="practice-card" data-state="loading">
+        <header class="card-header">
+          <div>
+            <p class="card-label">Sentence</p>
+            <p class="card-title">Type the missing conjugation</p>
           </div>
-          <p id="conj-feedback" class="feedback" aria-live="assertive"></p>
-        </article>
-
-        <article class="card module-card" id="module-sentence" hidden>
-          <h3>7) Sentence building</h3>
-          <p id="sentence-prompt" class="prompt"></p>
-          <div class="input-row">
-            <label class="sr-only" for="sentence-input">Sentence building answer</label>
-            <input id="sentence-input" type="text" placeholder="Build the sentence..." autocomplete="off" />
-            <button id="check-sentence" class="btn primary">Check</button>
-            <button id="next-sentence" class="btn">Next</button>
+          <div class="scoreboard" aria-label="scoreboard">
+            <span class="score-pill score-pill--mode"
+              >Tense <strong id="mode-label">Present</strong></span
+            >
+            <span class="score-pill score-pill--good"
+              >Right <strong id="correct-count">0</strong></span
+            >
+            <span class="score-pill score-pill--bad"
+              >Wrong <strong id="wrong-count">0</strong></span
+            >
           </div>
-          <p id="sentence-feedback" class="feedback" aria-live="assertive"></p>
-        </article>
+        </header>
 
-        <article class="card module-card" id="module-story" hidden>
-          <h3>8) Mini-dialogue / story</h3>
-          <div id="story-lines" class="story"></div>
-        </article>
+        <p id="sentence" class="sentence">Loading your verbs...</p>
+
+        <div class="prompt-row">
+          <div>
+            <p class="prompt-label">English cue</p>
+            <p id="hint" class="hint-pill">Preparing a prompt...</p>
+          </div>
+          <div class="meta-chips">
+            <div class="subject-chip">
+              <span class="subject-chip__label">Form</span>
+              <span id="subject-form">...</span>
+            </div>
+            <div class="subject-chip verb-chip" title="Hover or press . to reveal the infinitive">
+              <span class="subject-chip__label">Verb</span>
+              <span id="verb-name" class="verb-chip__value">hidden</span>
+            </div>
+          </div>
+        </div>
+
+        <label class="input-wrap" for="answer">
+          <span class="sr-only">Type the missing verb</span>
+          <input
+            id="answer"
+            name="answer"
+            type="text"
+            inputmode="latin"
+            autocomplete="off"
+            autocapitalize="off"
+            autocorrect="off"
+            spellcheck="false"
+            placeholder="Type the Spanish verb and press Enter"
+            disabled
+          />
+        </label>
+
+        <p id="feedback" class="feedback" aria-live="polite">
+          Loading practice data...
+        </p>
+        <p class="enter-note">Enter submits. Enter again loads the next card.</p>
       </section>
     </main>
 
-    <footer class="app-footer">
-      <p>Tip: complete each module in order for the smoothest progression.</p>
-    </footer>
-
-    <script type="module" src="./src/main.js"></script>
+    <script src="./app.js" defer></script>
   </body>
 </html>
